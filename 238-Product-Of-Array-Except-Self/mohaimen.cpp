@@ -35,8 +35,14 @@ basic idea:
 need a prcess with O(1) access
 so indeed a hash table maybe?
 
+1*2*3*4 = 24
+24/2 = 12
+24/1 = 24
+24/3 = 8
+24/4 = 6
 1,2,3,4
 24,12,8,6
+
 
 
 */
