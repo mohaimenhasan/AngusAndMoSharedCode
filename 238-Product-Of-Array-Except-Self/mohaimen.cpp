@@ -43,26 +43,40 @@ so indeed a hash table maybe?
 1,2,3,4
 24,12,8,6
 
+bcd, acd, abd, abc
+
+nums = a, b, c, d
+
+firstList = 1, a, ab, abc
+
+1, d, cd, bcd
+
+1*bcd, a*cd, ab*d, abc*1
 
 
 */
-
-
-
-
-
-class Solution {
+class Solution{
 public:
-    vector<int> productExceptSelf(vector<int>& nums) {
-      vector <int> outputArray;
-      int product;
-      for (int i=0; i <nums.size(); i++){
-        product=product*nums[i];
-      }
-      for (int i=0; i < nums.size(); i++){
-        int out=product*1/nums[i];
-        outputArray.push(out);
-      }
-      return outputArray;
+  vector <int> productExceptSelf(vector<int>& nums) {
+    vector <int> output;
+    std::vector<int> firstList;
+    std::vector<int> secondList;
+    int product = 1;
+    firstList[0] = 1;
+    secondList[0] = 1;
+
+    for (int i=0; i < nums.size() - 1; i++){
+      firstList.push(nums[i]*firstList[i]);
     }
+    int j = 0;
+    for (int i=nums.size() - 1; i > 0; i--){
+      secondList.push(nums[i] * secondList[j]);
+      j++;
+    }
+
+    for (int i=0; i < nums.size(); i++){
+      output.push(firstList[i]*secondList[secondList.size()-i-1]);
+    }
+    return output;
+  }
 };
