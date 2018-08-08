@@ -1,0 +1,20 @@
+1. Given and list of options and a list of relative probability
+create a function that outputs those options with those relative probabilities
+
+so like say cat, dog, mouse
+and  2, 3,4
+you want cat 2/9 times
+dog 3/9 times
+mouse 4/9 times
+
+
+2. Given a list of strings, find a pair that uses the same distinct characters
+
+
+so like abc and cbbaa use the same distinct characters
+because you ignore order and frequency
+
+
+3. Given a m x n array, find the number of paths that you can take from
+the bottom left to the bottom right corner where at every spot, you can
+move right, right-up or right-down
